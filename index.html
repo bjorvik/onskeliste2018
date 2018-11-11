@@ -70,6 +70,7 @@
                 div.appendChild(txt);
 
                 document.body.appendChild(div);
+                document.getElementById("overskrift").style.fontSize = h/4 + "%";
             }
         }
 
@@ -92,7 +93,6 @@
             margin: 0;
             height: 100px;
             line-height: 100px;
-            font-size: 300%;
             color: black;
         }
         h2 {
@@ -109,10 +109,12 @@
         }
         img {
             display: flex;
+            border: none;
         }
+
     </style>
 </head>
 <body>
-<h1>Sebs ønskeliste 2018</h1>
+<h1 id="overskrift">Sebs ønskeliste 2018</h1>
 </body>
 </html>
