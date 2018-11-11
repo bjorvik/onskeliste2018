@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Sebastian Bjorvik">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Boiiii</title>
+    <script src="../mineFunksjoner.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One+Outline" rel="stylesheet">
+    <script>
+        window.onload = oppstart;
+
+        var onskser = [
+            "Nanoleaf",
+            "tt",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ];
+        var bilde = [
+            "bilder/nanoleaf.png",
+            "",
+            "bilder/bo4.png",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ];
+
+        var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+        var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+
+        function oppstart() {
+            // Hovedprogramkode her...
+            for (i=0; i<10; i++) {
+                var div = document.createElement("div");
+                div.className = "boks";
+                if (i%2 === 0) {
+                    div.style.backgroundColor = "#ddd";
+                }
+                else {
+                    div.style.backgroundColor = "#fff";
+                }
+                div.style.width = w + "px";
+                div.style.height = h/5 + "px";
+
+                var num = document.createElement("h2");
+                num.innerHTML = i+1 + ".";
+                num.style.lineHeight = h/5 + "px";
+                div.appendChild(num);
+
+                var img = document.createElement("img");
+                img.src = bilde[i];
+                img.style.width = h/5 + "px";
+                //img.style.marginTop = -h/5 + "px";
+                //img.style.marginLeft = w/5 + "px";
+                div.appendChild(img);
+
+                var txt = document.createElement("h3");
+                txt.innerHTML = onskser[i];
+                txt.style.lineHeight = h/5 + "px";
+                //txt.style.marginLeft = w/10 + "px";
+                div.appendChild(txt);
+
+                document.body.appendChild(div);
+            }
+        }
+
+    </script>
+    <style>
+        body {
+            margin: 0;
+        }
+        .boks {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        h1 {
+            font-family: "Kumar One Outline";
+            text-align: center;
+            width: 100%;
+            background-color: #555;
+            margin: 0;
+            height: 100px;
+            line-height: 100px;
+            font-size: 300%;
+            color: black;
+        }
+        h2 {
+            margin: 0;
+            width: 100px;
+            font-size: 300%;
+            font-family: "Kumar One Outline";
+            display: flex;
+        }
+        h3 {
+            display: flex;
+            margin: 0;
+            width: 100px;
+        }
+        img {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+<h1>Sebs ønskeliste 2018</h1>
+</body>
+</html>
