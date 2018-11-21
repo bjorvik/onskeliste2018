@@ -10,28 +10,18 @@
         window.onload = oppstart;
 
         var onskser = [
-            "<a href='https://www.gear4music.no/no/Keyboard-and-pianoer/Nektar-Impact-LX61and/1O9Q' target='_blank'>Nektar Impact LX61+</a>",
-            "<a></a>",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "<a href='https://www.gear4music.no/no/Keyboard-and-pianoer/Nektar-Impact-LX61and/1O9Q' target='_blank'>Nektar Impact LX61+ <span>1 689 kr</span></a>",
+            "<a href='https://nanoleaf.me/en/consumer-led-lighting/products/smarter-series/nanoleaf-light-panels-smarter-kit/#get' target='_blank'>Nanoleaf Light Panels (15 Panels + Rythm Bundle) <span>2 915 kr</span></a>",
+            "<a href='https://www.callofduty.com/blackops4' target='_blank'>Call of Duty: Black Ops 4 <span>599 kr</span></a>",
+            "<a href='https://www.gear4music.no/no/Opptak-og-datamaskiner/KRK-Rokit-RP5-G3-Active-Monitors-with-Isolation-Pads-and-Cables-Pair/1MHT' target='_blank'>KRK Rokit RP5 G3 <span>2 795</span></a>",
+            "<a href='https://www.gear4music.no/no/Opptak-og-datamaskiner/Focusrite-Scarlett-2i2-Vocal-Studio-Pakke-2-Gen/1LGS' target='_blank'>Focusrite Scarlett Solo Bundle <span>2 453 kr</span></a>"
         ];
         var bilde = [
             "bilder/nektar.png",
+            "bilder/nanoleaf.png",
             "bilder/bo4.png",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
+            "bilder/krk.png",
+            "bilder/scarlett.png"
         ];
 
         var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -51,45 +41,70 @@
                 div.style.width = w + "px";
                 div.style.height = (h-100)/5 + "px";
 
+                var numdiv = document.createElement("div");
+                numdiv.className = "numboks";
+                numdiv.style.width = (h-100)/5 + "px";
+
+                var bildediv = document.createElement("div");
+                bildediv.className = "bildeboks";
+                bildediv.style.flex = "1";
+
+                var textdiv = document.createElement("div");
+                textdiv.className = "textboks";
+                textdiv.style.flex = "1";
+
                 var num = document.createElement("h2");
                 num.innerHTML = i+1 + ".";
                 num.style.lineHeight = h/5 + "px";
-                div.appendChild(num);
+                numdiv.appendChild(num);
 
                 var img = document.createElement("img");
                 img.src = bilde[i];
                 img.style.height = (h-100)/5 + "px";
+                /*
                 var bredde = parseFloat(img.width) * parseFloat(img.height)/(h-100)/5;
                 console.log(parseFloat(img.height)/(h-100)/5);
                 var padding = (w/3 - bredde) / 2 + "px";
                 img.style.marginLeft = padding;
                 img.style.marginRight = padding;
                 console.log(padding + " " + w);
+                */
                 //img.style.marginTop = -h/5 + "px";
                 //img.style.marginLeft = w/5 + "px";
-                div.appendChild(img);
-3
+                bildediv.appendChild(img);
+
                 var txt = document.createElement("h3");
                 txt.innerHTML = onskser[i];
                 txt.style.lineHeight = (h-100)/5 + "px";
                 txt.style.width = w/4 + "px";
                 //txt.style.marginLeft = w/10 + "px";
-                div.appendChild(txt);
+                textdiv.appendChild(txt);
+
+                div.appendChild(numdiv);
+                div.appendChild(bildediv);
+                div.appendChild(textdiv);
 
                 document.body.appendChild(div);
-                document.getElementById("overskrift").style.fontSize = h/4 + "%";
             }
+            document.getElementById("overskrift").style.fontSize = h/4 + "%";
         }
 
     </script>
     <style>
         body {
             margin: 0;
+            overflow: hidden;
+        }
+        span {
+            color: deeppink;
         }
         .boks {
             padding: 0;
             margin: 0;
             display: inline-flex;
+        }
+        .bildeboks {
+            display: flex;
             justify-content: space-around;
         }
         h1 {
@@ -104,21 +119,21 @@
         }
         h2 {
             margin: 0;
-            width: 100px;
             font-size: 300%;
             font-family: "Kumar One Outline";
-            display: inline;
+            text-align: center;
         }
         h3 {
-            display: inline;
             margin: 0;
-            width: 100px;
             white-space: nowrap;
+            text-align: center;
+            font-family: Arial;
         }
-        img {
-            display: flex;
-            border: none;
+        a {
+            color: deepskyblue;
+            text-decoration: none;
         }
+
 
     </style>
 </head>
