@@ -81,6 +81,9 @@
                 var txt = document.createElement("h3");
                 txt.innerHTML = onskser[i];
                 txt.style.width = w/4 + "px";
+                if(w > 700) {
+                    txt.style.marginTop = (h-100)/10-20 + "px";
+                }
                 //txt.style.marginLeft = w/10 + "px";
                 textdiv.appendChild(txt);
 
